@@ -32,7 +32,13 @@ function displayData(error, data) {
     return;
   }
 
-  console.log(data);
+  // Get the JSON
+  var parsedData = JSON.parse(data);
+  
+  // Print the URL of each image
+  for (var i = 0; i < parsedData.length; i++) {
+    console.log(parsedData[i].avatar_url);
+  }
 }
 // Sample
 getRepoContributors("jquery", "jquery", displayData);
