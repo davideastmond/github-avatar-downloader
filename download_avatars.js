@@ -1,5 +1,6 @@
 var request = require('request');
 var fs = require("fs");
+var secrets = require("./secrets");
 var testSite = "https://api.github.com/repos/jquery/jquery/contributors";
 
 
@@ -17,7 +18,8 @@ function getRepoContributors(repoOwner, repoName, cb) {
   var options = {
     url: "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/" + "contributors",
     headers: {
-      'User-Agent': 'davideastmond'
+      'User-Agent': 'davideastmond',
+      'Authorization': 'token ' + secrets.GITHUB_TOKEN
     }
   };
 
