@@ -1,6 +1,6 @@
 var request = require('request');
 var fs = require("fs");
-var testSite = "https://api.github.com/repos/jquery/jquery/contributors"
+var testSite = "https://api.github.com/repos/jquery/jquery/contributors";
 
 
 // Pull the repoOwner and repoName from the command line
